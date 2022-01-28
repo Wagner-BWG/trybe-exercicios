@@ -1,0 +1,42 @@
+.boneco
+{
+    position: absolute;
+    top: 400px;
+}
+
+#super-mario
+    {
+        width: 100px;
+        top: 250px;
+        left: 50px;
+    }
+  
+#goomba 
+    {
+        width: 100px;
+        left: 50px;
+    }
+  
+.baloon 
+    {
+        position: absolute;
+        left: 180px;
+        top: 200px;
+        z-index: 0;
+    }
+  
+.speach 
+    {
+        position: absolute;
+        font-size: 25px;
+        top: 240px;
+        left: 200px;
+        z-index: 1;
+    }
+  
+#bowser 
+     {
+        width: 250px;
+        left: 450px;
+        top:  350px;
+    }
