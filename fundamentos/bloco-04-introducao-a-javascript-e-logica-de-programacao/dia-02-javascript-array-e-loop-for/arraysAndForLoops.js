@@ -74,13 +74,24 @@ for (let i = 0; i < numbers.length; i = i+1)
 
 console.log(lowestNumber);
 
-// console.log(" ");
-// console.log("Exercício 8: Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado");
-// console.log(" ");
+console.log(" ");
+console.log("Exercício 8: Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado");
+console.log(" ");
 
-// let newArray = [];
+let newArray = [];
 
-// for(let i = 1; i <= 25; i = i+1)
-// {
+for(let i = 1; i <= 25; i = i+1)
+{
+    newArray.push(i);
+}
 
-// }
+console.log(newArray);
+
+console.log(" ");
+console.log("Exercício 9: Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2");
+console.log(" ");
+
+for(let i = 0; i < newArray.length; i = i+1)
+{
+    console.log(newArray[i]/2);
+}
