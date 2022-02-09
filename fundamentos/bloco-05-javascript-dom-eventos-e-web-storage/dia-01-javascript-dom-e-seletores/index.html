@@ -47,13 +47,58 @@
         - document.getElementById()
         - document.getElementsByClassName()
         - document.getElementsByTagName()
- Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
- Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
- Crie uma função que mude a cor do quadrado vermelho para branco.
- Crie uma função que corrija o texto da tag <h1>.
- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
- Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-        */
+ Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)*/
+    function changeText(howWillIBe){
+        document.getElementsByTagName("p")[1].textContent = howWillIBe;
+    }
+
+    changeText("Sexy 😎");
+
+ /*Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).*/
+    function changeMC(color){
+        document.getElementsByClassName("main-content")[0].style.backgroundColor = color;
+    }
+    changeMC("rgb(76,164,109)");
+ 
+ /*Crie uma função que mude a cor do quadrado vermelho para branco.*/
+    function changeCC(color){
+        document.getElementsByClassName("center-content")[0].style.backgroundColor = color;
+    }
+
+    changeCC("white");
+
+ /*Crie uma função que corrija o texto da tag <h1>.*/
+    let header = document.getElementsByTagName("h1")[0].innerText;
+    
+    function correctHeader(){
+        if (header != "Exercício 5.1 - JavaScript"){
+            header = "Exercício 5.1 - JavaScript";
+            document.getElementsByTagName("h1")[0].innerText = header;
+        }
+    }
+
+    correctHeader();
+ 
+ /*Crie uma função que modifique todo o texto da tag <p> para maiúsculo.*/
+    let paragraphs = document.getElementsByTagName("p");
+    
+    function uppercase(){        
+        for (let i = 0; i < paragraphs.length; i += 1){
+            paragraphs[i].style.textTransform = 'uppercase';
+        }
+    }
+
+    uppercase();
+
+ /*Crie uma função que exiba o conteúdo de todas as tags <p> no console.*/
+    function readP(){
+        for (let i = 0; i < paragraphs.length; i += 1){
+            console.log(paragraphs[i].innerText);
+        }
+        
+    }
+
+    readP();
     </script>
   </body>
 </html>
