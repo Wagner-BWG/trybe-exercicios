@@ -1,6 +1,5 @@
-let bckGrndBlack;
 const body = document.body;
-
+const text = document.getElementsByTagName("p")[0].style;
 
 window.onload = function () {
     const bckgBtn = document.getElementById("btn-fundo");
@@ -15,44 +14,34 @@ window.onload = function () {
     linSpcBtn.addEventListener("click", lineSpace);
     fontBtn.addEventListener("click", fontChange);
 
-    if (localStorage.getItem("BackgroundColor") === null) {
-        bckGrndBlack = true;
+    if (localStorage.getItem("BackgroundColor") != null) {
+        body.style.backgroundColor = JSON.parse(localStorage.getItem("BackgroundColor"));
     }
-    else {
-        bckGrndBlack = JSON.parse(localStorage.getItem("BackgroundColor"));
+    if (localStorage.getItem("TextColor") != null) {
+        text.color = JSON.parse(localStorage.getItem("TextColor"));
     }
-
-    if (bckGrndBlack === false) {
-        body.style.backgroundColor = "white";
+    if (localStorage.getItem("TextSize") != null) {
+        text.fontSize = JSON.parse(localStorage.getItem("TextSize")) + "px";
     }
-    // const lettersColor = ;
-    // const lettersSize = ;
-    // const spaceBtwLines = ;
 
 }
 
-
 function changeBackgroundColor() {
-
-    if (bckGrndBlack === true) {
-        body.style.backgroundColor = "white";
-        bckGrndBlack = false;
-    }
-    else {
-        body.style.backgroundColor = "black";
-        bckGrndBlack = true;
-    }
-
-    localStorage.setItem("BackgroundColor", JSON.stringify(bckGrndBlack));
-
+    let bgColorPicker = document.getElementById("bgColor").value;
+    body.style.backgroundColor = bgColorPicker;
+    localStorage.setItem("BackgroundColor", JSON.stringify(bgColorPicker));
 }
 
 function textColor() {
-    alert("change text color");
+    let txtColorPicker = document.getElementById("txtColor").value;
+    text.color = txtColorPicker;
+    localStorage.setItem("TextColor", JSON.stringify(txtColorPicker));
 }
 
 function fontSize() {
-    alert("change font size");
+    let txtSizePicker = document.getElementById("txtSize").value;
+    text.fontSize = txtSizePicker + "px";
+    localStorage.setItem("TextSize", JSON.stringify(txtSizePicker));
 }
 
 function lineSpace() {
