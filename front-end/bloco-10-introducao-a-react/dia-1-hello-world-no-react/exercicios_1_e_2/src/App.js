@@ -7,16 +7,14 @@ const Task = (value) => {
   );
 }
 
-const coisas = ['Uma coisa', 'Duas coisas', 'Três coisas'];
+const coisas = ['Uma coisa', 'Duas coisas', 'Três coisas', 'Quatro coisas'];
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <ul>
-        {coisas.map((coisa) => {
-        return <li key={coisa}>{coisa}</li>;
-        })}
+        {coisas.map((coisa) => Task(coisa))}
         </ul>
       </header>
     </div>
