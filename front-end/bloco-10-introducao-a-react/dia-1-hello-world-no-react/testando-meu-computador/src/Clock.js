@@ -1,15 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function tick() {
-  const element = (
-    <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {new Date().toLocaleTimeString('pt', { hour12: true })}.</h2>
-    </div>
-  );
-  return element;
+class Clock extends Component {
+  render() {
+    return <h2>{setInterval(new Date().toLocaleTimeString('pt', { hour12: true }), 1000)}</h2>;
+  }
 }
-
-const Clock = () => setInterval(tick, 100);
 
 export default Clock;
